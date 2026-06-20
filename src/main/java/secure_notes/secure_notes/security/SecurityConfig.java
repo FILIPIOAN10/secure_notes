@@ -21,6 +21,8 @@ public class SecurityConfig {
                 .requestMatchers("/admin").denyAll()
                 .requestMatchers("/admin/**").denyAll()
                 .anyRequest().authenticated());
+
+        httpSecurity.csrf(csrf->csrf.disable());
         httpSecurity.sessionManagement( session->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         httpSecurity.httpBasic(Customizer.withDefaults());
