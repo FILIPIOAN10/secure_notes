@@ -11,7 +11,7 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Lob // content will be higher tha 255 suitable for long text
+
     private String content;
 
     private String ownerUsername;
